@@ -1,0 +1,22 @@
+{
+  "stage3_warm_hours": 19.264444444444443,
+  "cold_seed": 42,
+  "stage3_budget_hours": 22.764444444444443,
+  "total_gpu_hours_cap": 24,
+  "pytorch": "2.9.1+rocm7.2.1.gitff65f5bc",
+  "budget_accounting": "conservative GPU-process wall time including CPU work",
+  "folds": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "test_policy": "once per frozen checkpoint; cached chunks reused",
+  "gpu": "AMD Radeon RX 9070 XT",
+  "stages12_seconds": 4437.385902037,
+  "python": "3.12.3",
+  "final_reserve_minutes": 30,
+  "seed": 42,
+  "cold_hours_reserved": 3
+}

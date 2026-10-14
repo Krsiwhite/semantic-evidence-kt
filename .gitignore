@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+data/
+runs/
+*.log
+*.pt
+*.npz
+*.part
+*.tar.gz
+.gpu.lock

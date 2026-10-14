@@ -1,0 +1,57 @@
+{
+  "audit_date": "2026-10-14",
+  "repository": "https://github.com/sjin4861/BAIM",
+  "commit": "a9501b5e44dafc0e81d2f17e717766a4106d0122",
+  "source_path": "src/pykt-toolkit/pykt/models/sparsekt_baim.py",
+  "source_sha256": "80caa9f9c57ed117f1c63b81a4969a5a9b2215b555b6bce3811483488b6346ec",
+  "license": "Apache-2.0; exact upstream LICENSE preserved at vendor/LICENSE.BAIM",
+  "official_cli": "src/pykt-toolkit/train_test/sparsekt_baim_train.py",
+  "official_cli_defaults": {
+    "emb_type": "qid_sparseattn",
+    "num_epochs": 200,
+    "patience": 5,
+    "minimum_validation_auc_improvement": 0.0002,
+    "batch_size": 128,
+    "learning_rate": 0.0001,
+    "num_attn_heads": 4,
+    "final_fc_dim": 256,
+    "final_fc_dim2": 256,
+    "n_blocks": 2,
+    "d_model": 256,
+    "dropout": 0.1,
+    "sparse_ratio": 0.8,
+    "k_index": 5
+  },
+  "finding": "The sparseattn branch concatenates the first k_index rows of already-softmaxed causal attention and then applies a second softmax. Zeros in forbidden positions of these rows become positive, except row zero which is subsequently reset. This is present in the pinned public implementation and active under its CLI default.",
+  "claim_limit": "This CPU audit does not establish which exact code or checkpoints produced the paper's reported scores, and does not prove that paper experiments used leaked labels.",
+  "cpu_probe": {
+    "device": "cpu",
+    "seed": 42,
+    "attention_length": 8,
+    "k_index": 5,
+    "attention_query_key": "all zero; values identity",
+    "forbidden_attention_mass_by_row_before": [0.0, 0.7202919721603394, 0.645338773727417, 0.5442569255828857, 0.4378235340118408, 0.0, 0.0, 0.0],
+    "forbidden_attention_mass_by_row_after": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+    "model": "n_question20, d_model16, n_blocks2, dropout0, num_attn_heads4, seq_len8, final_fc_dim16, final_fc_dim2_16; eval",
+    "intervention": "flip final response zero to one, leaving all earlier inputs unchanged",
+    "prediction_deltas_before": [0.0, -0.00044023990631103516, 0.0007532238960266113, 0.0005210638046264648, -0.0023834705352783203, -0.0000026226043701171875, 0.0000015497207641601562, 0.0000037550926208496094],
+    "maximum_earlier_probability_change_before": 0.0023834705352783203,
+    "maximum_probability_change_after": 0.0
+  },
+  "repair": "Immediately before attention dropout, set masked positions to zero again and normalize each row with denominator clamped at 1e-12. The row with no allowed history remains zero.",
+  "other_vendor_edits": [
+    "Remove unused pyKT imports and wrapper; retain SparseKTBAIMNet and required network classes.",
+    "Replace diagnostic-only debug_print import by a no-op to avoid the full pyKT dependency tree.",
+    "Allow a preloaded tensor instead of an embedding path.",
+    "Allow return_logits=True for stable BCEWithLogits and an additive evidence head."
+  ],
+  "prohibited_experiment": "Do not train the known noncausal raw implementation as a performance baseline.",
+  "paper_reference": {
+    "url": "https://aclanthology.org/2026.findings-acl.1125.pdf",
+    "main_table_qwen3_vl_32b_auc_percent": 83.21,
+    "main_table_std_auc_percent": 0.10,
+    "table4_qwen3_vl_8b_auc_percent": 83.22,
+    "table4_std_auc_percent": 0.08,
+    "status": "author-reported five-fold results; code discrepancy unresolved; not a score reproduced by this project"
+  }
+}

@@ -1,0 +1,2 @@
+numpy>=1.26,<3
+# Install a PyTorch build compatible with your existing GPU runtime separately.

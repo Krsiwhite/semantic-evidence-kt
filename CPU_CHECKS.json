@@ -1,0 +1,43 @@
+{
+  "device": "cpu",
+  "variants": {
+    "baseline": {
+      "max_current_or_future_response_effect": 0.0,
+      "decomposition_error": 0.0,
+      "finite_backward": true
+    },
+    "residual": {
+      "max_current_or_future_response_effect": 0.0,
+      "decomposition_error": 0.0,
+      "finite_backward": true
+    },
+    "evidence": {
+      "max_current_or_future_response_effect": 0.0,
+      "decomposition_error": 2.0209699869155884e-07,
+      "finite_backward": true
+    },
+    "full": {
+      "max_current_or_future_response_effect": 0.0,
+      "decomposition_error": 2.0209699869155884e-07,
+      "finite_backward": true
+    }
+  },
+  "zero_support_residual_invariant": true,
+  "data": {
+    "test_loading": "lazy",
+    "fixed_length": 200,
+    "cold_train_responses_removed": true,
+    "cold_query_history_warm_only": true,
+    "cold_split_sha256": "55be2bf5600a2ce3ce96b1e9da6a552398df05371e8b4f2f851c16e44bc47d27",
+    "cold_split_counts": {
+      "warm": 28,
+      "cold_val": 6,
+      "cold_test": 6
+    },
+    "cold_split_update_check": "70/15/15 deterministic partition, disjoint coverage checked; no model rerun"
+  },
+  "cold_padding": {
+    "selected_warm_qid": 2,
+    "held_out_item_zero_embedding_gradient": 0.0
+  }
+}
