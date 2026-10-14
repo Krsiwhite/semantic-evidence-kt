@@ -1,0 +1,315 @@
+{
+  "status": "stopped_by_user",
+  "stopped_at_utc": "2026-10-14T06:58:15.8332749Z",
+  "budget_seconds_used": 23332.845306348998,
+  "budget_limit_seconds": 81952.0,
+  "stages12_seconds": 4437.385902037,
+  "combined_seconds": 27770.231208385998,
+  "automation_status": "PAUSED",
+  "no_active_training_process": true,
+  "completed_tests": 4,
+  "completed_folds": [
+    0
+  ],
+  "interrupted_run": "standard-f1-baseline-s42",
+  "interrupted_after_completed_epochs": 10,
+  "cold_experiments_started": false,
+  "runs": {
+    "standard-f0-baseline-s42": {
+      "training": {
+        "status": "complete",
+        "run": "standard-f0-baseline-s42",
+        "stop_reason": "early_stopping",
+        "completed_epochs": 49,
+        "best": {
+          "epoch": 44,
+          "validation": {
+            "auc": 0.8211960605069316,
+            "accuracy": 0.8298672113940826,
+            "nll": 0.38761343653340247,
+            "brier": 0.12209506739192914,
+            "ece15": 0.006065699864668243,
+            "targets": 885091,
+            "positives": 703187,
+            "valid_positions": 891277,
+            "unscored_valid_positions": 6186
+          },
+          "config_sha256": "97663229b2db99a414e1de88e3d8634c719223f7181569b6eccde301b1b46ed6"
+        },
+        "checkpoint_sha256": "522ee59866863fd711132a2f8ef012ff54ce0ac1184d27561429b652760f2067",
+        "config_sha256": "97663229b2db99a414e1de88e3d8634c719223f7181569b6eccde301b1b46ed6",
+        "test_used_for_selection": false
+      },
+      "test": {
+        "checkpoint_sha256": "522ee59866863fd711132a2f8ef012ff54ce0ac1184d27561429b652760f2067",
+        "config_sha256": "97663229b2db99a414e1de88e3d8634c719223f7181569b6eccde301b1b46ed6",
+        "checkpoint_selection": "validation_auc_with_minimum_improvement_only",
+        "one_immutable_checkpoint": true,
+        "test_csv_sha256": "f175100f8e5d40f5a20af044133f6fa69bc1642c59f8d999f40b8389082e20f3",
+        "coldsplit_sha256": null,
+        "eval_batch_size": 64,
+        "dataset_length": 7711,
+        "dataset_class": "SequenceDataset",
+        "target_order": "SequentialSampler; dataset index ascending; scored positions ascending",
+        "test_binding_sha256": "ef37b91af2d7178797e72806149dd00b1ee7c59cb09538a3c49955d622e86196",
+        "run": "standard-f0-baseline-s42",
+        "metrics": {
+          "auc": 0.8223140355938766,
+          "accuracy": 0.8300833797568927,
+          "nll": 0.3861241736241971,
+          "brier": 0.12163009023337354,
+          "ece15": 0.006105032413549032,
+          "targets": 1094990,
+          "positives": 871087,
+          "valid_positions": 1102701,
+          "unscored_valid_positions": 7711
+        },
+        "inference_chunks": 121,
+        "paper_comparison": "83.22 is an author-reported reference; causal corrections and protocols differ"
+      }
+    },
+    "standard-f0-residual-s42": {
+      "training": {
+        "status": "complete",
+        "run": "standard-f0-residual-s42",
+        "stop_reason": "early_stopping",
+        "completed_epochs": 57,
+        "best": {
+          "epoch": 52,
+          "validation": {
+            "auc": 0.8213935526555547,
+            "accuracy": 0.8302253666572138,
+            "nll": 0.38770724746275514,
+            "brier": 0.12199610558645875,
+            "ece15": 0.008818430214185534,
+            "targets": 885091,
+            "positives": 703187,
+            "valid_positions": 891277,
+            "unscored_valid_positions": 6186
+          },
+          "config_sha256": "b35d516bbd3ed519ff61bc45862e2f35aa81d8a20a622e5454226f966565e077"
+        },
+        "checkpoint_sha256": "84a03a8a324aeb4083e308edb83a81c0a60c80b6895257e7d0f2352d3514665f",
+        "config_sha256": "b35d516bbd3ed519ff61bc45862e2f35aa81d8a20a622e5454226f966565e077",
+        "test_used_for_selection": false
+      },
+      "test": {
+        "checkpoint_sha256": "84a03a8a324aeb4083e308edb83a81c0a60c80b6895257e7d0f2352d3514665f",
+        "config_sha256": "b35d516bbd3ed519ff61bc45862e2f35aa81d8a20a622e5454226f966565e077",
+        "checkpoint_selection": "validation_auc_with_minimum_improvement_only",
+        "one_immutable_checkpoint": true,
+        "test_csv_sha256": "f175100f8e5d40f5a20af044133f6fa69bc1642c59f8d999f40b8389082e20f3",
+        "coldsplit_sha256": null,
+        "eval_batch_size": 64,
+        "dataset_length": 7711,
+        "dataset_class": "SequenceDataset",
+        "target_order": "SequentialSampler; dataset index ascending; scored positions ascending",
+        "test_binding_sha256": "2e822fa5f05356485c72d144caef67702d40c25acdbf0d5411057f132936ed5e",
+        "run": "standard-f0-residual-s42",
+        "metrics": {
+          "auc": 0.8225524474975141,
+          "accuracy": 0.8303920583749623,
+          "nll": 0.3863042091108735,
+          "brier": 0.12156302011215567,
+          "ece15": 0.008985007145889276,
+          "targets": 1094990,
+          "positives": 871087,
+          "valid_positions": 1102701,
+          "unscored_valid_positions": 7711
+        },
+        "inference_chunks": 121,
+        "paper_comparison": "83.22 is an author-reported reference; causal corrections and protocols differ"
+      }
+    },
+    "standard-f0-evidence-s42": {
+      "training": {
+        "status": "complete",
+        "run": "standard-f0-evidence-s42",
+        "stop_reason": "early_stopping",
+        "completed_epochs": 56,
+        "best": {
+          "epoch": 51,
+          "validation": {
+            "auc": 0.821682292973361,
+            "accuracy": 0.8301948613193446,
+            "nll": 0.38690080643540176,
+            "brier": 0.12188154178688931,
+            "ece15": 0.003544877935580674,
+            "targets": 885091,
+            "positives": 703187,
+            "valid_positions": 891277,
+            "unscored_valid_positions": 6186
+          },
+          "config_sha256": "acbbcf1c0d9786170114071bdb7bbe526ea963dad74de20bb0e2ff711113cfb0"
+        },
+        "checkpoint_sha256": "58404e7cee331a65039023ec3a62d4f0b694f94e3957813c3b379c32339f134f",
+        "config_sha256": "acbbcf1c0d9786170114071bdb7bbe526ea963dad74de20bb0e2ff711113cfb0",
+        "test_used_for_selection": false
+      },
+      "test": {
+        "checkpoint_sha256": "58404e7cee331a65039023ec3a62d4f0b694f94e3957813c3b379c32339f134f",
+        "config_sha256": "acbbcf1c0d9786170114071bdb7bbe526ea963dad74de20bb0e2ff711113cfb0",
+        "checkpoint_selection": "validation_auc_with_minimum_improvement_only",
+        "one_immutable_checkpoint": true,
+        "test_csv_sha256": "f175100f8e5d40f5a20af044133f6fa69bc1642c59f8d999f40b8389082e20f3",
+        "coldsplit_sha256": null,
+        "eval_batch_size": 64,
+        "dataset_length": 7711,
+        "dataset_class": "SequenceDataset",
+        "target_order": "SequentialSampler; dataset index ascending; scored positions ascending",
+        "test_binding_sha256": "4109be899a31be6e7abe6412a73c8a07c02798b0363fe6e5d2502844d9aab48c",
+        "run": "standard-f0-evidence-s42",
+        "metrics": {
+          "auc": 0.8230786249820902,
+          "accuracy": 0.8303701403665786,
+          "nll": 0.3852310497578465,
+          "brier": 0.12136795692970433,
+          "ece15": 0.0036701411266150735,
+          "targets": 1094990,
+          "positives": 871087,
+          "valid_positions": 1102701,
+          "unscored_valid_positions": 7711,
+          "contribution_audit": {
+            "scored_targets_saved": 128,
+            "limit": 128,
+            "source": "first_test_batch_same_forward_as_scored_predictions",
+            "target_identity_columns": [
+              "sequence_row",
+              "target_position",
+              "question_id"
+            ],
+            "history_index_semantics": "zero_based_position_in_model_input_window; invalid=-1",
+            "decomposition": "final_logit = logit(base_probability) + sum(signed_history_contributions)",
+            "base_probability_clamp_for_inverse_sigmoid": [
+              1E-07,
+              0.9999999
+            ],
+            "base_probabilities_clipped": 0,
+            "max_logit_reconstruction_error": 5.0531847701762445E-06,
+            "max_final_probability_reconstruction_error": 9.580861159985687E-08,
+            "max_base_probability_reconstruction_error": 7.8570572159542E-08,
+            "rounding_note": "Inverse sigmoid uses stored base probabilities; saturation/rounding can affect logit error.",
+            "real_student_uids_saved": false
+          }
+        },
+        "inference_chunks": 121,
+        "paper_comparison": "83.22 is an author-reported reference; causal corrections and protocols differ"
+      }
+    },
+    "standard-f0-full-s42": {
+      "training": {
+        "status": "complete",
+        "run": "standard-f0-full-s42",
+        "stop_reason": "early_stopping",
+        "completed_epochs": 53,
+        "best": {
+          "epoch": 48,
+          "validation": {
+            "auc": 0.8211969587848544,
+            "accuracy": 0.8299779344722746,
+            "nll": 0.3875651364113303,
+            "brier": 0.12215717094577593,
+            "ece15": 0.009118355898145719,
+            "targets": 885091,
+            "positives": 703187,
+            "valid_positions": 891277,
+            "unscored_valid_positions": 6186
+          },
+          "config_sha256": "b7bfb8bd04c8028c5e6f9cd7edd77efc5c20578d642af2189229de111138a753"
+        },
+        "checkpoint_sha256": "451d937bf5dc2c3aac96e84b98001571346cacac99e3417db8200a717a7a07f7",
+        "config_sha256": "b7bfb8bd04c8028c5e6f9cd7edd77efc5c20578d642af2189229de111138a753",
+        "test_used_for_selection": false
+      },
+      "test": {
+        "checkpoint_sha256": "451d937bf5dc2c3aac96e84b98001571346cacac99e3417db8200a717a7a07f7",
+        "config_sha256": "b7bfb8bd04c8028c5e6f9cd7edd77efc5c20578d642af2189229de111138a753",
+        "checkpoint_selection": "validation_auc_with_minimum_improvement_only",
+        "one_immutable_checkpoint": true,
+        "test_csv_sha256": "f175100f8e5d40f5a20af044133f6fa69bc1642c59f8d999f40b8389082e20f3",
+        "coldsplit_sha256": null,
+        "eval_batch_size": 64,
+        "dataset_length": 7711,
+        "dataset_class": "SequenceDataset",
+        "target_order": "SequentialSampler; dataset index ascending; scored positions ascending",
+        "test_binding_sha256": "23504f899a827f36b4b01ee161c18aa9ba170fb3c1f4848f8af87f82c2781406",
+        "run": "standard-f0-full-s42",
+        "metrics": {
+          "auc": 0.8224445972070477,
+          "accuracy": 0.830172878291126,
+          "nll": 0.38611957440604416,
+          "brier": 0.12166154650946812,
+          "ece15": 0.009486675979677029,
+          "targets": 1094990,
+          "positives": 871087,
+          "valid_positions": 1102701,
+          "unscored_valid_positions": 7711,
+          "contribution_audit": {
+            "scored_targets_saved": 128,
+            "limit": 128,
+            "source": "first_test_batch_same_forward_as_scored_predictions",
+            "target_identity_columns": [
+              "sequence_row",
+              "target_position",
+              "question_id"
+            ],
+            "history_index_semantics": "zero_based_position_in_model_input_window; invalid=-1",
+            "decomposition": "final_logit = logit(base_probability) + sum(signed_history_contributions)",
+            "base_probability_clamp_for_inverse_sigmoid": [
+              1E-07,
+              0.9999999
+            ],
+            "base_probabilities_clipped": 0,
+            "max_logit_reconstruction_error": 1.767759070681052E-06,
+            "max_final_probability_reconstruction_error": 1.2624691358986695E-07,
+            "max_base_probability_reconstruction_error": 7.266379853376748E-08,
+            "rounding_note": "Inverse sigmoid uses stored base probabilities; saturation/rounding can affect logit error.",
+            "real_student_uids_saved": false
+          }
+        },
+        "inference_chunks": 121,
+        "paper_comparison": "83.22 is an author-reported reference; causal corrections and protocols differ"
+      }
+    },
+    "standard-f1-baseline-s42": {
+      "training": "not_completed",
+      "test": "not_completed"
+    },
+    "standard-f1-full-s42": {
+      "training": "not_completed",
+      "test": "not_completed"
+    },
+    "standard-f2-baseline-s42": {
+      "training": "not_completed",
+      "test": "not_completed"
+    },
+    "standard-f2-full-s42": {
+      "training": "not_completed",
+      "test": "not_completed"
+    },
+    "standard-f3-baseline-s42": {
+      "training": "not_completed",
+      "test": "not_completed"
+    },
+    "standard-f3-full-s42": {
+      "training": "not_completed",
+      "test": "not_completed"
+    },
+    "standard-f4-baseline-s42": {
+      "training": "not_completed",
+      "test": "not_completed"
+    },
+    "standard-f4-full-s42": {
+      "training": "not_completed",
+      "test": "not_completed"
+    },
+    "cold-f0-baseline-s42": {
+      "training": "not_completed",
+      "test": "not_completed"
+    },
+    "cold-f0-full-s42": {
+      "training": "not_completed",
+      "test": "not_completed"
+    }
+  }
+}

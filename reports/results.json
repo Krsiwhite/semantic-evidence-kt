@@ -1,0 +1,190 @@
+{
+  "runs": [
+    {
+      "protocol": "standard",
+      "fold": 0,
+      "variant": "baseline",
+      "seed": 42,
+      "validation": {
+        "auc": 0.8211960605069316,
+        "accuracy": 0.8298672113940826,
+        "nll": 0.38761343653340247,
+        "brier": 0.12209506739192914,
+        "ece15": 0.006065699864668243,
+        "targets": 885091,
+        "positives": 703187,
+        "valid_positions": 891277,
+        "unscored_valid_positions": 6186
+      },
+      "test": {
+        "auc": 0.8223140355938766,
+        "accuracy": 0.8300833797568927,
+        "nll": 0.3861241736241971,
+        "brier": 0.12163009023337354,
+        "ece15": 0.006105032413549032,
+        "targets": 1094990,
+        "positives": 871087,
+        "valid_positions": 1102701,
+        "unscored_valid_positions": 7711
+      },
+      "stop_reason": "early_stopping",
+      "checkpoint_sha256": "522ee59866863fd711132a2f8ef012ff54ce0ac1184d27561429b652760f2067",
+      "test_binding_sha256": "ef37b91af2d7178797e72806149dd00b1ee7c59cb09538a3c49955d622e86196"
+    },
+    {
+      "protocol": "standard",
+      "fold": 0,
+      "variant": "evidence",
+      "seed": 42,
+      "validation": {
+        "auc": 0.821682292973361,
+        "accuracy": 0.8301948613193446,
+        "nll": 0.38690080643540176,
+        "brier": 0.12188154178688931,
+        "ece15": 0.003544877935580674,
+        "targets": 885091,
+        "positives": 703187,
+        "valid_positions": 891277,
+        "unscored_valid_positions": 6186
+      },
+      "test": {
+        "auc": 0.8230786249820902,
+        "accuracy": 0.8303701403665786,
+        "nll": 0.3852310497578465,
+        "brier": 0.12136795692970433,
+        "ece15": 0.0036701411266150735,
+        "targets": 1094990,
+        "positives": 871087,
+        "valid_positions": 1102701,
+        "unscored_valid_positions": 7711,
+        "contribution_audit": {
+          "scored_targets_saved": 128,
+          "limit": 128,
+          "source": "first_test_batch_same_forward_as_scored_predictions",
+          "target_identity_columns": [
+            "sequence_row",
+            "target_position",
+            "question_id"
+          ],
+          "history_index_semantics": "zero_based_position_in_model_input_window; invalid=-1",
+          "decomposition": "final_logit = logit(base_probability) + sum(signed_history_contributions)",
+          "base_probability_clamp_for_inverse_sigmoid": [
+            1e-07,
+            0.9999999
+          ],
+          "base_probabilities_clipped": 0,
+          "max_logit_reconstruction_error": 5.0531847701762445e-06,
+          "max_final_probability_reconstruction_error": 9.580861159985687e-08,
+          "max_base_probability_reconstruction_error": 7.8570572159542e-08,
+          "rounding_note": "Inverse sigmoid uses stored base probabilities; saturation/rounding can affect logit error.",
+          "real_student_uids_saved": false
+        }
+      },
+      "stop_reason": "early_stopping",
+      "checkpoint_sha256": "58404e7cee331a65039023ec3a62d4f0b694f94e3957813c3b379c32339f134f",
+      "test_binding_sha256": "4109be899a31be6e7abe6412a73c8a07c02798b0363fe6e5d2502844d9aab48c"
+    },
+    {
+      "protocol": "standard",
+      "fold": 0,
+      "variant": "full",
+      "seed": 42,
+      "validation": {
+        "auc": 0.8211969587848544,
+        "accuracy": 0.8299779344722746,
+        "nll": 0.3875651364113303,
+        "brier": 0.12215717094577593,
+        "ece15": 0.009118355898145719,
+        "targets": 885091,
+        "positives": 703187,
+        "valid_positions": 891277,
+        "unscored_valid_positions": 6186
+      },
+      "test": {
+        "auc": 0.8224445972070477,
+        "accuracy": 0.830172878291126,
+        "nll": 0.38611957440604416,
+        "brier": 0.12166154650946812,
+        "ece15": 0.009486675979677029,
+        "targets": 1094990,
+        "positives": 871087,
+        "valid_positions": 1102701,
+        "unscored_valid_positions": 7711,
+        "contribution_audit": {
+          "scored_targets_saved": 128,
+          "limit": 128,
+          "source": "first_test_batch_same_forward_as_scored_predictions",
+          "target_identity_columns": [
+            "sequence_row",
+            "target_position",
+            "question_id"
+          ],
+          "history_index_semantics": "zero_based_position_in_model_input_window; invalid=-1",
+          "decomposition": "final_logit = logit(base_probability) + sum(signed_history_contributions)",
+          "base_probability_clamp_for_inverse_sigmoid": [
+            1e-07,
+            0.9999999
+          ],
+          "base_probabilities_clipped": 0,
+          "max_logit_reconstruction_error": 1.767759070681052e-06,
+          "max_final_probability_reconstruction_error": 1.2624691358986695e-07,
+          "max_base_probability_reconstruction_error": 7.266379853376748e-08,
+          "rounding_note": "Inverse sigmoid uses stored base probabilities; saturation/rounding can affect logit error.",
+          "real_student_uids_saved": false
+        }
+      },
+      "stop_reason": "early_stopping",
+      "checkpoint_sha256": "451d937bf5dc2c3aac96e84b98001571346cacac99e3417db8200a717a7a07f7",
+      "test_binding_sha256": "23504f899a827f36b4b01ee161c18aa9ba170fb3c1f4848f8af87f82c2781406"
+    },
+    {
+      "protocol": "standard",
+      "fold": 0,
+      "variant": "residual",
+      "seed": 42,
+      "validation": {
+        "auc": 0.8213935526555547,
+        "accuracy": 0.8302253666572138,
+        "nll": 0.38770724746275514,
+        "brier": 0.12199610558645875,
+        "ece15": 0.008818430214185534,
+        "targets": 885091,
+        "positives": 703187,
+        "valid_positions": 891277,
+        "unscored_valid_positions": 6186
+      },
+      "test": {
+        "auc": 0.8225524474975141,
+        "accuracy": 0.8303920583749623,
+        "nll": 0.3863042091108735,
+        "brier": 0.12156302011215567,
+        "ece15": 0.008985007145889276,
+        "targets": 1094990,
+        "positives": 871087,
+        "valid_positions": 1102701,
+        "unscored_valid_positions": 7711
+      },
+      "stop_reason": "early_stopping",
+      "checkpoint_sha256": "84a03a8a324aeb4083e308edb83a81c0a60c80b6895257e7d0f2352d3514665f",
+      "test_binding_sha256": "2e822fa5f05356485c72d144caef67702d40c25acdbf0d5411057f132936ed5e"
+    }
+  ],
+  "fold_summary": {
+    "baseline": {
+      "folds": [
+        0
+      ],
+      "mean_auc": 0.8223140355938766,
+      "std_auc": null,
+      "all_five_complete": false
+    },
+    "full": {
+      "folds": [
+        0
+      ],
+      "mean_auc": 0.8224445972070477,
+      "std_auc": null,
+      "all_five_complete": false
+    }
+  }
+}
