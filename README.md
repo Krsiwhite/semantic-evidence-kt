@@ -20,13 +20,16 @@
 
 ## 运行
 
-依赖 Python 3.12、PyTorch 和 NumPy。GPU 环境需要与本机驱动匹配；此项目不自动替换现有 GPU PyTorch。
+依赖 Python 3.12、PyTorch 和 NumPy；测试文件预处理另需 pandas，可使用独立 Python 环境。GPU 环境需要与本机驱动匹配；此项目不自动替换现有 GPU PyTorch。
 
 ```bash
 python data.py download --root data
+python prepare_test_sequences.py --data-root data
 python -u train.py --data-root data --output runs/first-pass \
   --budget-hours 18 --warm-hours 14.5 --cold-hours 3
 ```
+
+官方压缩包未包含主测试的 `test_sequences_quelevel.csv`。预处理脚本从原始 `test_quelevel.csv` 调用固定 BAIM 版本的原始分段函数生成该文件：每段200步，尾段不足3步丢弃，其余右填充；学生划分、题目编号及多知识点保持原样。脚本校验上游源码哈希并保存输入／输出哈希与汇总数量，不执行模型推理。来源记录见 `reports/test_sequences_manifest.json`。
 
 队列先完成 fold0 的 `baseline/residual/evidence/full`，验证集选择冻结后才请求测试文件。然后按预算补齐 baseline/full 的其余四折，以及从头训练的冷题对照。使用 `latest.pt`、优化器、随机状态及批次游标续训；已有完成结果与已完成测试块直接复用。恢复时保持原命令预算和配置不变。
 

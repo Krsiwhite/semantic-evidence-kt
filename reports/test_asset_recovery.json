@@ -1,0 +1,13 @@
+{
+  "issue": "Official archive omitted test_sequences_quelevel.csv",
+  "action": "Materialize from test_quelevel.csv with checksum-bound unchanged BAIM generate_sequences",
+  "closed_budget_before_resume_seconds": 22173.5817759,
+  "resumed_session_id": 27295,
+  "source_and_recipe_unchanged": true,
+  "retrained_completed_runs": false,
+  "repeated_test_inference": false,
+  "preprocessing_manifest": "reports/test_sequences_manifest.json",
+  "helper": "prepare_test_sequences.py",
+  "independent_readonly_audit": "passed",
+  "resume_observed_utc": "2026-10-14T06:38:43.1104095Z"
+}

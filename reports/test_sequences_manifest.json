@@ -1,0 +1,35 @@
+{
+  "baim_commit": "a9501b5e44dafc0e81d2f17e717766a4106d0122",
+  "method": "unchanged upstream generate_sequences",
+  "parameters": {
+    "min_seq_len": 3,
+    "maxlen": 200,
+    "pad_val": -1
+  },
+  "input": "XES3G5M/question_level/test_quelevel.csv",
+  "input_sha256": "60fee6ceffa8880ba5dcfec37be5a577740793afee4c86c3a4a3a91df0a4c4a3",
+  "output": "XES3G5M/question_level/test_sequences_quelevel.csv",
+  "output_sha256": "f175100f8e5d40f5a20af044133f6fa69bc1642c59f8d999f40b8389082e20f3",
+  "source_sha256": {
+    "split_datasets.py": "83d6047474ec01d32750c48c8e506883eb6bf233e81aa9e895807f565e60a2b7",
+    "split_datasets_que.py": "1f5e7a4fdd3e0db26aa69bf5dc63296b615fb7174e4435ef046eef63d9941101"
+  },
+  "source_urls": {
+    "split_datasets.py": "https://raw.githubusercontent.com/sjin4861/BAIM/a9501b5e44dafc0e81d2f17e717766a4106d0122/src/pykt-toolkit/pykt/preprocess/split_datasets.py",
+    "split_datasets_que.py": "https://raw.githubusercontent.com/sjin4861/BAIM/a9501b5e44dafc0e81d2f17e717766a4106d0122/src/pykt-toolkit/pykt/preprocess/split_datasets_que.py"
+  },
+  "counts": {
+    "raw_students": 3613,
+    "raw_events": 1102810,
+    "segments": 7711,
+    "valid_events": 1102701,
+    "dropped_short_tail_events": 109,
+    "standard_scored_targets": 1094990,
+    "padding_positions": 439499
+  },
+  "pandas_version": "3.0.1",
+  "numpy_version": "2.3.5",
+  "split_or_id_remapping_performed": false,
+  "model_inference_performed": false,
+  "reason": "The official downloaded archive omits the main segmented test CSV."
+}

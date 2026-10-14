@@ -1,0 +1,13 @@
+{
+  "baim_commit": "a9501b5e44dafc0e81d2f17e717766a4106d0122",
+  "dataset": {
+    "url": "https://drive.usercontent.google.com/download?id=1eFiIYyh5O2V90RA0brammGH6EpHvPDQe&export=download&confirm=t",
+    "bytes": 373235093,
+    "sha256": "62d145bd995248f78726a0b6ab69612cf418e3118d0fe01bfe6f4c61b5072f73"
+  },
+  "embeddings": {
+    "url": "https://raw.githubusercontent.com/sjin4861/BAIM/a9501b5e44dafc0e81d2f17e717766a4106d0122/embedding/xes3g5m/polya_tensor_all_layers_mean_pca768.pt",
+    "bytes": 94029649,
+    "sha256": "23f7761268093c66699184ae6784d353a8ca3d881d835bdf74723410b601d153"
+  }
+}

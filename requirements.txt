@@ -1,2 +1,3 @@
 numpy>=1.26,<3
+pandas>=2.2,<4  # Only needed by prepare_test_sequences.py; may use a separate environment.
 # Install a PyTorch build compatible with your existing GPU runtime separately.

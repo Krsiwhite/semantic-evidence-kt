@@ -87,6 +87,17 @@ targets require `selectmasks != -1`, a valid response, and position greater than
 zero. Item frequencies come only from training inputs. `prepare` never opens
 the test CSV; its returned `test_factory` opens and hashes it only when called.
 
+The downloaded archive contains the original test and the windowed test, but
+omits the main segmented test. `prepare_test_sequences.py` invokes the unchanged
+`generate_sequences` function from the pinned BAIM preprocessing source, with
+`min_seq_len=3`, `maxlen=200`, and `pad_val=-1`. It preserves the original fixed
+student split, event order, IDs, responses and multi-KC strings. Its source hashes,
+input/output hashes and aggregate counts are in `reports/test_sequences_manifest.json`.
+The resulting main test has 7,711 segments and 1,094,990 shifted scored targets.
+This asset was materialized after fold0 selection froze and before any test
+inference, recovering a missing data-preparation step without changing frozen
+training/model source or rerunning completed configurations.
+
 The official maximum is 200 epochs with patience five and required validation
 AUC improvement greater than 0.0002, Adam learning rate 0.0001 and effective
 batch size 128. The experiment runner records its actual compute cap; stopping
